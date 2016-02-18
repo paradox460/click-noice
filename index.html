@@ -1,1 +1,14 @@
-<!DOCTYPE html><html><head><title>Click…Noice</title><style type="text/css">body{margin:0}video{width:100%;height:100%}</style></head><body><video autoplay="" loop="" src="click-noice.mp4"></video></body></html>
+<!DOCTYPE html><html><head><title>Click...Noice</title><style type="text/css">body{margin:0}video{width:100%;height:100%}</style></head><body><video autoplay="" loop="" poster="noice.jpg"><source src="click-noice.webm" type="video/webm; codecs=&quot;vp9, vorbis&quot;" /><source src="click-noice.mp4" type="video/mp4;codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" /></video><script>var video, bod;
+function init() {
+video = document.querySelector('video');
+bod = document.querySelector('body');
+bod.addEventListener('click', playVideo);
+}
+
+function playVideo(evt) {
+  if (video.paused) {
+    video.play();
+  }
+}
+
+init();</script></body></html>
