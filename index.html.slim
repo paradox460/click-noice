@@ -1,7 +1,7 @@
 doctype 5
 html
   head
-    title Click…Noice
+    title Click...Noice
     sass:
       body
         margin: 0
@@ -9,4 +9,21 @@ html
         width: 100%
         height: 100%
   body
-    video src="click-noice.mp4" autoplay=true loop=true
+    video autoplay=true loop=true poster='noice.jpg'
+      source src="click-noice.webm" type='video/webm; codecs="vp9, vorbis"'
+      source src="click-noice.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'
+    javascript:
+      var video, bod;
+      function init() {
+      video = document.querySelector('video');
+      bod = document.querySelector('body');
+      bod.addEventListener('click', playVideo);
+      }
+      
+      function playVideo(evt) {
+        if (video.paused) {
+          video.play();
+        }
+      }
+      
+      init();
